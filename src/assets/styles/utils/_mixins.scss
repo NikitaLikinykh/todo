@@ -1,0 +1,19 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin bg {
+  background: repeating-linear-gradient(
+    45deg,
+    #92c9b1,
+    #92c9b1 20px,
+    #b3e0d2 20px,
+    #b3e0d2 40px
+  );
+}
