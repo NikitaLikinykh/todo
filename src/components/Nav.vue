@@ -105,6 +105,6 @@ export default {
 }
 
 .nav__label.active .icon {
-  fill: #d17842; /* Цвет для активной иконки */
+  fill: #d17842;
 }
 </style>
