@@ -24,7 +24,6 @@ export default {
         title: "",
         text: "",
         category: "work",
-        date: "",
       },
     };
   },
