@@ -1,31 +1,22 @@
 <template>
   <div class="add-note">
-    <input
-      type="text"
-      class="input"
-      placeholder="Title"
-      v-model="itemInfo.title"
-      required
+    <NoteForm
+      :note="itemInfo"
+      :submitAction="addItemToTodoList"
+      buttonText="Send"
+      @update:note="updateNote"
     />
-    <SelectButton @update:category="handleCategoryUpdate" />
-    <textarea
-      class="textarea"
-      placeholder="text"
-      v-model="itemInfo.text"
-      required
-    ></textarea>
-    <button class="btn" @click="addItemToTodoList">Send</button>
   </div>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
-import SelectButton from "../components/ui/SelectButton.vue";
+import NoteForm from "../components/NoteForm.vue";
 
 export default {
   name: "add-note-page",
   components: {
-    SelectButton,
+    NoteForm,
   },
   data() {
     return {
@@ -33,18 +24,18 @@ export default {
         title: "",
         text: "",
         category: "work",
+        date: "",
       },
     };
   },
   methods: {
     ...mapMutations(["setItemToTodoList"]),
-    addItemToTodoList() {
-      this.setItemToTodoList(this.itemInfo);
+    addItemToTodoList(note) {
+      this.setItemToTodoList(note);
       this.$router.push("/");
     },
-    handleCategoryUpdate(newCategory) {
-      console.log(newCategory);
-      this.itemInfo.category = newCategory;
+    updateNote(updatedNote) {
+      this.itemInfo = updatedNote;
     },
   },
 };
