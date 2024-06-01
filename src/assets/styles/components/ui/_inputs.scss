@@ -1,3 +1,6 @@
+@import "../../utils/variables";
+@import "../../utils/mixins";
+
 .input {
   border: none;
   box-sizing: border-box;
@@ -5,9 +8,10 @@
   max-width: 400px;
   width: 100%;
   padding: 20px 10px;
-  background: white;
+  background: $input-bg-color;
   outline: none;
 }
+
 .textarea {
   border: none;
   box-sizing: border-box;
@@ -16,6 +20,6 @@
   width: 100%;
   min-height: 350px;
   padding: 10px;
-  background: white;
+  background: $input-bg-color;
   outline: none;
 }

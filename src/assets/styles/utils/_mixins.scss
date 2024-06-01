@@ -17,3 +17,35 @@
     #b3e0d2 40px
   );
 }
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin transition($property, $duration, $timing) {
+  transition: $property $duration $timing;
+}
+
+@mixin container($max-width: 1200px, $padding: 1rem) {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $padding;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

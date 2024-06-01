@@ -4,7 +4,8 @@ function getCurrentDate() {
   const date = new Date();
   const day = String(date.getDate()).padStart(2, "0");
   const month = String(date.getMonth() + 1).padStart(2, "0");
-  return `${day}/${month}`;
+  const year = date.getFullYear();
+  return `${month}/${day}/${year}`;
 }
 
 function loadFromLocalStorage(key) {
@@ -48,12 +49,13 @@ const store = createStore({
         saveToLocalStorage("todoList", state.todoList);
       }
     },
-    updateTodoItem(state, { id, title, text, category }) {
+    updateTodoItem(state, { id, title, text, category, updatedDate }) {
       const todoItem = state.todoList.find((todo) => todo.id === id);
       if (todoItem) {
         todoItem.title = title;
         todoItem.text = text;
         todoItem.category = category;
+        todoItem.updatedDate = updatedDate;
         saveToLocalStorage("todoList", state.todoList);
       }
     },

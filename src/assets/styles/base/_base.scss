@@ -1,3 +1,6 @@
+@import "../utils/_variables";
+@import "../utils/_mixins";
+
 .container {
   width: 100%;
   height: 100%;
@@ -15,8 +18,18 @@
 }
 
 body {
-  background: -webkit-linear-gradient(90deg, #89a7d5, #89a7d5, #faf5f0);
-  background: linear-gradient(90deg, #89a7d5, #89a7d5, #faf5f0);
+  background: -webkit-linear-gradient(
+    90deg,
+    $gradient-start-1,
+    $gradient-mid-1,
+    $gradient-end-1
+  );
+  background: linear-gradient(
+    90deg,
+    $gradient-start-1,
+    $gradient-mid-1,
+    $gradient-end-1
+  );
 }
 
 .app-wrapper {

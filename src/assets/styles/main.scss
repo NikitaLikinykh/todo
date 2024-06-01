@@ -1,17 +1,16 @@
 @import "./utils/_mixins";
+@import "./utils/_variables";
 @import "./base/_reset";
 @import "./base/_base";
 
 // Components
-
-@import "./components/_todo.scss";
+@import "./components/_todo";
 @import "./components/ui/_checkbox";
-@import "./components/ui/buttons";
+@import "./components/ui/_buttons";
 @import "./components/_navigation";
 @import "./components/ui/_inputs";
 
-// pages
-
+// Pages
 @import "./pages/_home";
 @import "./pages/_add-note";
 @import "./pages/_favorite";

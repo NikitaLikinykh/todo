@@ -1,3 +1,6 @@
+@import "../../utils/variables";
+@import "../../utils/mixins";
+
 .btn {
   position: relative;
   font-size: 14px;
@@ -10,18 +13,18 @@
   border: none;
   font-family: inherit;
   font-weight: 500;
-  color: black;
-  background-color: white;
+  color: $btn-text-color;
+  background-color: $btn-bg-color;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px $btn-shadow-color;
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px $btn-shadow-color;
 }
 
 .btn::after {
@@ -38,7 +41,7 @@
 }
 
 .btn::after {
-  background-color: #fff;
+  background-color: $btn-bg-color;
 }
 
 .btn:hover::after {

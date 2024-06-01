@@ -10,8 +10,13 @@
         {{ todoItem.category }}
       </div>
     </div>
-    <div class="todo__item-data">{{ todoItem.createdDate }}</div>
-    <div class="todo__item-data">{{ todoItem.updateData }}</div>
+    <div class="todo__item-data-wrapper">
+      <div class="todo__item-data">{{ todoItem.createdDate }}</div>
+      <div class="todo__item-data todo__item-data_update">
+        {{ todoItem.updatedDate }}
+      </div>
+    </div>
+
     <button @click="editItem">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +90,6 @@ const addItemToFavorite = () => {
 };
 
 const updateDone = (newDone) => {
-  console.log("upd");
   store.commit("updateTodoDone", { id: props.todoItem.id, done: newDone });
 };
 

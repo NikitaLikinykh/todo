@@ -1,28 +1,31 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
 .todo {
   max-width: 800px;
   width: 100%;
   height: 80%;
   margin: 20px;
   padding: 0px 20px 20px 20px;
-  background: white;
+  background: $white;
   box-sizing: content-box;
   overflow: scroll;
   @include border-radius(5px);
   background: -webkit-linear-gradient(
     90deg,
-    #deceaf,
-    #e6e3da,
-    #cad0ba,
-    #6a5632,
-    #446c7c
+    $gradient-start-1,
+    $gradient-mid-1,
+    $gradient-mid-2,
+    $gradient-mid-3,
+    $gradient-end-1
   );
   background: linear-gradient(
     90deg,
-    #deceaf,
-    #e6e3da,
-    #cad0ba,
-    #6a5632,
-    #446c7c
+    $gradient-start-1,
+    $gradient-mid-1,
+    $gradient-mid-2,
+    $gradient-mid-3,
+    $gradient-end-1
   );
   &__wrapper {
     display: flex;
@@ -44,8 +47,8 @@
     gap: 10px;
     padding: 10px;
     border-radius: 8px;
-    background: #081012;
-    color: white;
+    background: $dark-background;
+    color: $white;
     &-name {
       font-weight: 600;
     }
@@ -63,6 +66,17 @@
     }
     &-data {
       font-size: 12px;
+      &_update {
+        display: flex;
+        font-size: 10px;
+      }
+      &-wrapper {
+        max-width: 60px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
     }
   }
 }
@@ -72,7 +86,7 @@
   gap: 5px;
   &__item {
     font-weight: 300;
-    background: #778ed1;
+    background: $light-blue;
     padding: 2px;
     font-size: 12px;
   }

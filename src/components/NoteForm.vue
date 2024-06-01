@@ -74,8 +74,23 @@ export default {
       }
       return Object.keys(this.errors).length === 0;
     },
+    formatDate(date) {
+      const options = {
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      };
+      const formattedDate = new Date(date)
+        .toLocaleString("en-US", options)
+        .replace(",", "");
+      return formattedDate;
+    },
     submitForm() {
       if (this.validateForm()) {
+        this.localNote.updatedDate = this.formatDate(new Date());
+        this.$emit("update:note", this.localNote);
         this.submitAction(this.localNote);
       }
     },
